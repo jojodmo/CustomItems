@@ -14,6 +14,15 @@
    limitations under the License.
 */
 
+package com.jojodmo.customitems.api;
+
+import com.jojodmo.customitems.Main;
+import com.jojodmo.customitems.item.custom.CustomItem;
+import com.jojodmo.customitems.item.custom.CustomItemHandler;
+import com.jojodmo.customitems.item.custom.block.CustomItemBlockHandler;
+import org.bukkit.block.Block;
+import org.bukkit.inventory.ItemStack;
+
 /**
  * CustomItems API
  *
@@ -22,12 +31,14 @@
  */
 public class CustomItemsAPI{
 
+    //TODO: ALLOW GETTING RECIPES OF CUSTOM ITEMS
+
     /**
      * Most API functions will only work if the plugin is enabled (if this functions returns true)
      * @return true iff the plugin is enabled
      */
     public static boolean isEnabled(){
-        return Main.that.isEnabled();
+        return Main.that.isSetup();
     }
 
     /**
@@ -82,7 +93,6 @@ public class CustomItemsAPI{
         }
         return ci == null ? null : ci.getAmountItemStack(amount);
     }
-
     /*
     *
     * WORLD INFORMATION
@@ -97,6 +107,31 @@ public class CustomItemsAPI{
     public static String getCustomItemIDAtBlock(Block block){
         CustomItem ci = CustomItemBlockHandler.get(block.getLocation());
         return ci == null ? null : ci.getId();
+    }
+
+    /**
+     * Set the Block to the specified Custom Item. Shorthand for setCustomItemIDAtBlock(block, id, doBlockUpdate, false)
+     * @param block - the Block to set
+     * @param id - the ID of the Custom Item to get, case-insensitive.
+     * @param doBlockUpdate - whether or not to do a block update. This should be true in almost all cases.
+     * @return the Block that has been updated, or null if the Custom Item doesn't exist
+     */
+    public static Block setCustomItemIDAtBlock(Block block, String id, boolean doBlockUpdate){
+        return setCustomItemIDAtBlock(block, id, doBlockUpdate, false);
+    }
+
+    /**
+     * Set the Block to the specified Custom Item.
+     * @param block - the Block to set
+     * @param id - the ID of the Custom Item to get, Case-sensitive if caseSensitive is true.
+     * @param doBlockUpdate - whether or not to do a block update. This should be true in almost all cases.
+     * @param caseSensitive - set to true to make sure the stack's ID matches id case-sensitively
+     * @return the Block that has been updated, or null if the Custom Item doesn't exist
+     */
+    public static Block setCustomItemIDAtBlock(Block block, String id, boolean doBlockUpdate, boolean caseSensitive){
+        CustomItem ci = CustomItem.get(id, !caseSensitive);
+        if(ci == null){return null;}
+        return CustomItemBlockHandler.place(block, ci, doBlockUpdate);
     }
 
 
@@ -161,6 +196,4 @@ public class CustomItemsAPI{
         CustomItem ci = CustomItem.get(id, !caseSensitive);
         return ci == null ? null : ci.getItemName();
     }
-
-
 }
