@@ -3,4 +3,7 @@
 
 **You can view the wiki of this plugin [here](https://github.com/jojodmo/CustomItems/wiki)**
 
-**Purchase Custom Items on SpigotMC.org [here](https://www.spigotmc.org/resources/63848/)**
+**[Join CustomItem's discord](http://customitems.page.link/discord)**
+
+**[Get CustomItems on Polymart](https://polymart.org/resource/1)
+[Get CustomItems on SpigotMC.org](https://www.spigotmc.org/resources/63848/)
