@@ -5,4 +5,4 @@
 
 **[Join CustomItem's discord](http://customitems.page.link/discord)**
 
-**[Get CustomItems on Polymart](https://polymart.org/resource/1/r146)** • [Get CustomItems on SpigotMC.org](https://www.spigotmc.org/resources/63848/)
+**[Get CustomItems on Polymart (Get 10% off with the coupon code "polymart")](https://polymart.org/resource/1)** • [Get CustomItems on SpigotMC.org](https://www.spigotmc.org/resources/63848/)
