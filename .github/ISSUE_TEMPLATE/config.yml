@@ -1,7 +1,7 @@
 blank_issues_enabled: true
 contact_links:
   - name: Our Discord
-    url: http://bit.ly/cui-discord
+    url: https://discord.com/invite/QjwdY3d
     about: Please ask your questions and report bugs here.
   - name: The Wiki
     url: https://github.com/jojodmo/CustomItems/wiki
