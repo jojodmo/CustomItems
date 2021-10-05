@@ -1,5 +1,8 @@
 blank_issues_enabled: true
 contact_links:
+  - name: Report Bug 🐛 Or Feature Request 💠
+    url: https://discord.gg/ZTfpT4ejRt
+    about: Please do Feature Requests and Bug reports on our discord.
   - name: Our Discord
     url: https://discord.com/invite/QjwdY3d
     about: Please ask your questions and report bugs here.
